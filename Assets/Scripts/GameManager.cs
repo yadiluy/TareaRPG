@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { private set; get; }
+    public GameObject canvasIntro;
+
 
     private void Awake()
     {
@@ -23,5 +25,10 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("GameScene");
+    }
+
+    public void EndIntro()
+    {
+        canvasIntro.SetActive(false);
     }
 }
