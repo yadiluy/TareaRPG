@@ -7618,8 +7618,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\xC9rase una vez un h\xE9roe aventurero que se dedicaba a ayudar a quien
     lo necesite. Anteriormente ha batallado con monstruos, sobrevivido tempestades,
-    y salvado damiselas en peligro. En esta aventura, su nueva misi\xF3n es eliminar
-    a los intrusos de las Islas Verano, lideradas por el mago Rasput\xEDn."
+    y salvado damiselas en peligro. Las islas Verano es un lugar donde el h\xE9roe\r
+    le gusta ir para recuperar fuerzas..."
 --- !u!222 &580889154
 CanvasRenderer:
   m_ObjectHideFlags: 0

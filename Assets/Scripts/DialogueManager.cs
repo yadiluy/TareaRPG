@@ -69,6 +69,6 @@ public class DialogueManager : MonoBehaviour
     {
         characterImage.sprite =
             interaction.character.GetComponent<SpriteRenderer>().sprite;
-        dialogueText.text = interaction.text;
+        dialogueText.text = interaction.text.Replace("HeroName", ConfigManager.Instance.heroName);
     }
 }
