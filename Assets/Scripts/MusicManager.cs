@@ -7,6 +7,7 @@ using UnityEngine.Audio;
 [RequireComponent(typeof(Slider))]
 public class MusicManager : MonoBehaviour
 {
+    public static MusicManager Instance { get; private set; }
     public Slider slider;
 
     AudioSource audio
@@ -21,6 +22,14 @@ public class MusicManager : MonoBehaviour
 
     [SerializeField]
     private Text volumeLabel;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {

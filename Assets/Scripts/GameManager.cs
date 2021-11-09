@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        MusicManager.Instance.SoundTurnOff();
+    }
+
     public void QuitApplication()
     {
         Application.Quit();
@@ -30,5 +35,6 @@ public class GameManager : MonoBehaviour
     public void EndIntro()
     {
         canvasIntro.SetActive(false);
+        MusicManager.Instance.SoundTurnOn();
     }
 }

@@ -48,9 +48,26 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.transform.CompareTag("Character"))
         {
-            Debug.Log("Se inicia el dialogo");
-            CanMove = false;
-            DialogueManager.Instance.StartDialogue(0);
+            if (collision.gameObject.name == "Princess")
+            {
+                Debug.Log("Se inicia el dialogo");
+                CanMove = false;
+                DialogueManager.Instance.StartDialogue(1);
+            }
+
+            if (collision.gameObject.name == "Dog1")
+            {
+                Debug.Log("Se inicia el dialogo");
+                CanMove = false;
+                DialogueManager.Instance.StartDialogue(2);
+            }
+
+            if (collision.gameObject.name == "Dog2")
+            {
+                Debug.Log("Se inicia el dialogo");
+                CanMove = false;
+                DialogueManager.Instance.StartDialogue(3);
+            }
         }
 
     }
