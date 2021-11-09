@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpSO : MonoBehaviour
+[CreateAssetMenu(fileName = "Data", menuName = "Inventory/Powerups")]
+public class PowerUpSO : ScriptableObject
 {
     public string powerUpName;
     public float increment;

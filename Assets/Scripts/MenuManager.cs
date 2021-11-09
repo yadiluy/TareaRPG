@@ -8,10 +8,12 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance { private set; get; }
 
     public GameObject menuCanvas;
+    public GameObject configCanvas;
     public event EventHandler OnMenuOpenEvent;
     public event EventHandler OnMenuCloseEvent;
 
     private bool menuOpened = false;
+    private bool configOpened = false;
 
 
     private void Awake()
@@ -27,10 +29,12 @@ public class MenuManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !menuOpened)
         {
             OpenMenu();
+            if (configOpened) CloseConfigCanvas();
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && menuOpened)
         {
             CloseMenu();
+            if (configOpened) CloseConfigCanvas();
         }
     }
 
@@ -54,5 +58,19 @@ public class MenuManager : MonoBehaviour
         }
         menuOpened = false;
         menuCanvas.SetActive(false);
+    }
+
+    public void OpenConfigCanvas()
+    {
+        configOpened = true;
+        menuCanvas.SetActive(false);
+        configCanvas.SetActive(true);
+    }
+
+    public void CloseConfigCanvas()
+    {
+        configOpened = false;
+        configCanvas.SetActive(false);
+        if (menuOpened) CloseMenu();
     }
 }

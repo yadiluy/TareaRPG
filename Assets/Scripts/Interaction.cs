@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interaction : MonoBehaviour
+[System.Serializable]
+public class Interaction
 {
     public GameObject character;
     public string text;
