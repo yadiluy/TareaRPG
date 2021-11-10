@@ -50,32 +50,34 @@ public class PlayerController : MonoBehaviour
         {
             if (collision.gameObject.name == "Princess")
             {
-                Debug.Log("Se inicia el dialogo");
                 CanMove = false;
                 DialogueManager.Instance.StartDialogue(1);
             }
 
             if (collision.gameObject.name == "Dog1")
             {
-                Debug.Log("Se inicia el dialogo");
                 CanMove = false;
                 DialogueManager.Instance.StartDialogue(2);
             }
 
             if (collision.gameObject.name == "Dog2")
             {
-                Debug.Log("Se inicia el dialogo");
                 CanMove = false;
                 DialogueManager.Instance.StartDialogue(3);
             }
+
+            if (collision.gameObject.name == "Villain")
+            {
+                CanMove = false;
+                DialogueManager.Instance.StartDialogue(4);
+            }
+
+            if (collision.gameObject.name == "RigidForest")
+            {
+                CanMove = false;
+                DialogueManager.Instance.StartDialogue(5);
+            }
         }
 
-    }
-
-    public void Heal(float amount, bool boost)
-    {
-        if (boost) Health = 3f;
-        Health += amount;
-        Debug.Log($"Player Health: {Health}");
     }
 }
