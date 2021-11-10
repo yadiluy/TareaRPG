@@ -8302,17 +8302,26 @@ MonoBehaviour:
       text: "\xA1Hola! Soy HeroName y he venido a cumplir con mi mision..."
   - interactions:
     - character: {fileID: 194549907}
-      text: "\xA1\xA1\xA1Auxilio!!! \xA1\xA1\xA1Tengo mucho miedo de los monstruos!!!"
+      text: "\xA1\xA1\xA1Bienvenido joven HeroName!!! Hoy es un buen d\xEDa para
+        descansar."
     - character: {fileID: 490507286}
-      text: No se preocupe, he venido aqui a rescatarlos.
+      text: "Lo s\xE9 perfectamente princesa."
     - character: {fileID: 194549907}
-      text: "\xA1\xA1\xA1Muchas gracias HeroName!!!"
+      text: "Los isle\xF1os parecen asustados. \xBFPor qu\xE9 ser\xE1...?"
+    - character: {fileID: 490507286}
+      text: Hmmmmm...
   - interactions:
     - character: {fileID: 1771614695}
       text: "Joven HeroName, en las Islas Verano, nosotros vivimos de la pesca y
-        de la recolecci\xF3n de frutas."
+        de la recolecci\xF3n de frutas. "
     - character: {fileID: 1771614695}
-      text: "Es necesario deshacerse del mago Rasput\xEDn y sus plagas"
+      text: "Sin embargo, Rasputin nos ha dificultado el trabajo estos \xFAltimos
+        a\xF1os."
+    - character: {fileID: 490507286}
+      text: "\xBFRasputin...?"
+    - character: {fileID: 1771614695}
+      text: "Rasputin es un mago mal\xE9volo que vive en el bosque en la zona este
+        de la isla."
   - interactions:
     - character: {fileID: 255889290}
       text: "Cuando sea grande, quiero ser tan valiente y fuerte como t\xFA, HeroName"
