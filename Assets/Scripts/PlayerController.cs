@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
+    private float speed = 3f;
+    public Rigidbody2D rb;
+    public Animator animator;
     public MenuManager menuManager;
+    public GameObject basicArrowPrefab;
+    public GameObject magicArrowPrefab;
+
     public float Health { get; set; }
 
     private float movementX;
     private float movementY;
+    private bool onBasicArrow = true;
+
+    private float hf = 0.0f;
+    private float vf = 0.0f;
 
     public bool CanMove { get; set; }
 
@@ -17,6 +26,8 @@ public class PlayerController : MonoBehaviour
     {
         Health = 3f;
         CanMove = true;
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         // Nos vamos a inscribir como observadores de MenuManager (OnMenuOpenEvent)
         menuManager.OnMenuOpenEvent += MenuManager_OnMenuOpenEvent;
         // Nos vamos a inscribir como observadores de MenuManager (OnMenuCloseEvent)
@@ -40,7 +51,50 @@ public class PlayerController : MonoBehaviour
             movementX = Input.GetAxisRaw("Horizontal");
             movementY = Input.GetAxisRaw("Vertical");
 
+            hf = movementX > 0.01f ? movementX : movementX < -0.01f ? 1 : 0;
+            vf = movementY > 0.01f ? movementY : movementY < -0.01f ? 1 : 0;
+            if (movementX < -0.01f)
+            {
+                this.gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else if (movementX > 0.01f || movementY != 0)
+            {
+                this.gameObject.transform.localScale = new Vector3(1, 1, 1);
+            }
+
+            animator.SetFloat("Horizontal", hf);
+            animator.SetFloat("Vertical", movementY);
+            animator.SetFloat("Speed", vf);
+
             transform.position += (new Vector3(movementX, movementY)) * Time.deltaTime * speed;
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                if (movementX > 0.01f)
+                {
+                    Fire(180f);
+                }
+                else if (movementY > 0.01)
+                {
+                    Fire(-90f);
+                }
+                else if (movementY < -0.01f)
+                {
+                    Fire(90f);
+                }
+                else if (movementX < -0.01f)
+                {
+                    Fire(0f);
+                }
+                else
+                {
+                    Fire(90f);
+                }
+            }
+            if (Input.GetKey(KeyCode.Tab))
+            {
+                SwapWeapon();
+            }
         }
     }
 
@@ -79,5 +133,23 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+    }
+
+    private void SwapWeapon()
+    {
+        if (onBasicArrow)
+        {
+            onBasicArrow = false;
+        }
+        else
+        {
+            onBasicArrow = true;
+        }
+    }
+
+    private void Fire(float rotation)
+    {
+        GameObject bullet = Instantiate(onBasicArrow ? basicArrowPrefab : magicArrowPrefab, transform.position, Quaternion.identity);
+        bullet.transform.Rotate(0f, 0f, rotation);
     }
 }
