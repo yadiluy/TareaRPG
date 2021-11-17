@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     private float speed = 3f;
-    public Rigidbody2D rb;
-    public Animator animator;
     public MenuManager menuManager;
     public GameObject basicArrowPrefab;
     public GameObject magicArrowPrefab;
+    public GameObject GoblinHealth;
+    public EnemyController enemy;
+    public Text health;
 
-    public float Health { get; set; }
-
+    private Rigidbody2D rb;
+    private Animator animator;
     private float movementX;
     private float movementY;
     private bool onBasicArrow = true;
+    private float heroHealth = 5f;
 
     private float hf = 0.0f;
     private float vf = 0.0f;
@@ -24,7 +27,6 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        Health = 3f;
         CanMove = true;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -95,6 +97,21 @@ public class PlayerController : MonoBehaviour
             {
                 SwapWeapon();
             }
+            if (heroHealth <= 0)
+            {
+                GameManager.Instance.Restart();
+            }
+        }
+
+        if (transform.position.x > 45f)
+        {
+            GoblinHealth.SetActive(true);
+            enemy.active = true;
+        }
+        else
+        {
+            GoblinHealth.SetActive(false);
+            enemy.active = false;
         }
     }
 
@@ -120,19 +137,22 @@ public class PlayerController : MonoBehaviour
                 DialogueManager.Instance.StartDialogue(3);
             }
 
-            if (collision.gameObject.name == "Villain")
+            if (collision.gameObject.name == "Sorcerer")
             {
                 CanMove = false;
                 DialogueManager.Instance.StartDialogue(4);
             }
-
-            if (collision.gameObject.name == "RigidForest")
-            {
-                CanMove = false;
-                DialogueManager.Instance.StartDialogue(5);
-            }
         }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("BossArrow"))
+        {
+            heroHealth--;
+            health.text = heroHealth.ToString();
+            Destroy(collision.gameObject);
+        }
     }
 
     private void SwapWeapon()

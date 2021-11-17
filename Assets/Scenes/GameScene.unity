@@ -5958,7 +5958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.921295, y: -0.10002136}
+  m_AnchoredPosition: {x: -229, y: 140}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.49999997, y: 0.5000002}
 --- !u!114 &204052742
@@ -8148,7 +8148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 56.30001, y: 0}
+  m_AnchoredPosition: {x: 288.99997, y: 148.1}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &475771318
@@ -8246,7 +8246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7529412}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8287,7 +8287,7 @@ GameObject:
   - component: {fileID: 490507292}
   m_Layer: 0
   m_Name: Hero
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8395,11 +8395,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422cba4243d560d4b81dbe15dd2e8cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  animator: {fileID: 0}
   menuManager: {fileID: 1425637000}
   basicArrowPrefab: {fileID: 6242148492827822475, guid: 9419e7704f2fdd042b582e03b79d6daf, type: 3}
   magicArrowPrefab: {fileID: 8108866533563722213, guid: dee0939b498f5c94b8bb410862ffcf16, type: 3}
+  GoblinHealth: {fileID: 1581127403}
+  enemy: {fileID: 1898354539}
+  health: {fileID: 554472724}
 --- !u!50 &490507291
 Rigidbody2D:
   serializedVersion: 4
@@ -8725,7 +8726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43.921295, y: 0.000015258789}
+  m_AnchoredPosition: {x: -199, y: 140.10005}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554472724
@@ -9200,7 +9201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.300018, y: -0.1}
+  m_AnchoredPosition: {x: 259, y: 148}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.49999997, y: 0.5000002}
 --- !u!114 &640047563
@@ -11831,7 +11832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381151208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.78, y: 0.17, z: 0}
+  m_LocalPosition: {x: 9.83, y: 1.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12676,7 +12677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1581127404
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12712,7 +12713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7529412}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12904,7 +12905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 125.91, y: 124}
+  m_AnchoredPosition: {x: -341, y: 276}
   m_SizeDelta: {x: 48.18, y: 24.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1657846077
@@ -12979,7 +12980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 125.91022, y: 159.95511}
+  m_AnchoredPosition: {x: -340.99982, y: 311.9551}
   m_SizeDelta: {x: 48.1796, y: 24.0898}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &1688701082
@@ -13427,7 +13428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36.3, y: -1}
+  m_AnchoredPosition: {x: 196.39995, y: 147.1}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.49999997, y: 0.5000002}
 --- !u!114 &1803616092
@@ -13802,6 +13803,7 @@ GameObject:
   - component: {fileID: 1898354537}
   - component: {fileID: 1898354536}
   - component: {fileID: 1898354535}
+  - component: {fileID: 1898354539}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Character
@@ -13915,12 +13917,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898354534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 57.1, y: 1.68, z: 0}
+  m_LocalPosition: {x: 57.1, y: 0.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1898354539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898354534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0dd3ab774ee1a43b842e29a1c0fcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  arrow: {fileID: 8108866533563722213, guid: aecddcacc3bc8a745bee557dccd8820b, type: 3}
+  health: {fileID: 475771318}
 --- !u!1 &1904169927
 GameObject:
   m_ObjectHideFlags: 0
@@ -103966,7 +103983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -48.67871, y: -0.99998474}
+  m_AnchoredPosition: {x: -291.6, y: 139.10005}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.49999997, y: 0.5000002}
 --- !u!114 &2136852481

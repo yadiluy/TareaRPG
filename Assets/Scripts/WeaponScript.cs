@@ -35,16 +35,4 @@ public class WeaponScript : MonoBehaviour
         time += Time.deltaTime;
         transform.position += direction * speed * Time.deltaTime;
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //if (collision.transform.CompareTag("Enemy"))
-        //{
-        //    //Aumentar la barra de poder
-        //    if (GameManager.Instance.powerBarSlider.value < GameManager.Instance.powerBarSlider.maxValue) GameManager.Instance.powerBarSlider.value += GameManager.Instance.powerBarSlider.maxValue * 0.25f;
-
-        //    //Si la bala choca con un objeto, se debe destruir la bala.
-        //    Destroy(transform.gameObject);
-        //}
-    }
 }
